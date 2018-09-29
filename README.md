@@ -35,13 +35,13 @@ If you clone it and open that it'll probably work and do some stuff and you'll s
 _Mostly taken from `Mundane.test.js`_
 
 ```typescript
-  constructor (
-    context: any,
-    beforeHandler: (mev: any) => void,
-    afterHandler: (mev: any) => void,
-    errorHandler: (mev: any) => void,
-    options: object
-  )
+constructor (
+  context: any,
+  beforeHandler: (mev: any) => void,
+  afterHandler: (mev: any) => void,
+  errorHandler: (mev: any) => void,
+  options: object
+)
 ```
 
 ```javascript
@@ -57,11 +57,13 @@ let mundane = new Mundane(window,
 ----
 
 ```typescript
-  public observe (mevName: string, 
+public observe (mevName: string, 
   react: (mev: any) => void, 
   before: (mev: any) => void, 
   after: (mev: any) => void, 
-  eventPromiseGenerator: (mev: any) => Promise<any>, subject?: any)
+  eventPromiseGenerator: (mev: any) => Promise<any>, 
+  subject?: any
+)
 
 ```
 
@@ -78,7 +80,12 @@ mundane.observe('click',
 ----
 
 ```typescript
-  public occurIn(time: number, mev: any, before: (mev: any) => void, after: (mev: any) => void, eventPromise?: Promise<any>) 
+public occurIn(time: number, 
+  mev: any, 
+  before: (mev: any) => void, 
+  after: (mev: any) => void, 
+  eventPromise?: Promise<any>
+) 
 ```
 
 What kind of idiot am I making the before and after func arguments not optional? Geez somebody should punish me with a good hard pull request.
@@ -101,7 +108,10 @@ let mevs = [
 ----
 
 ```typescript
-  public sequence(sequence: IMundaneSequenceStep[], onStep: (step: any) => void)
+public sequence(
+  sequence: IMundaneSequenceStep[], 
+  onStep: (step: any) => void
+)
 ```
 
 ```javascript
