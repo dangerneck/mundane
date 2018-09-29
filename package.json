@@ -1,0 +1,29 @@
+{
+  "name": "mundane",
+  "version": "0.1.0",
+  "description": "mundane event lib for boring events and basic timing / scheduling",
+  "main": "Mundane.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel Mundane.ts --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:test": "babel Mundane.test.js --out-dir dist --extensions \".js\" --source-maps inline",
+    "bundle": "webpack"
+  },
+  "author": "Andrew Moore <dangerneck@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-loader": "^8.0.4",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0"
+  }
+}
