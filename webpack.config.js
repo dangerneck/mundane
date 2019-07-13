@@ -3,8 +3,8 @@ var path = require('path');
 module.exports = {
     // Change to your "entry-point".
     entry: {
-      mundane: './Mundane.ts',
-      test: './Mundane.test.js'
+      mundane: ['@babel/polyfill','./src/Mundane.ts'],
+      test: ['./src/Mundane.test.js']
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

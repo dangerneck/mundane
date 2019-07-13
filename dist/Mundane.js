@@ -1,98 +1,12 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(exports, "default", function() { return Mundane; });
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/**
- *
- *                 )  (                 )       
- *  (  `           ( /(  )\ )    (      ( /(       
- *  )\))(      (   )\())(()/(    )\     )\()) (    
- * ((_)()\     )\ ((_)\  /(_))((((_)(  ((_)\  )\   
- * (_()((_) _ ((_) _((_)(_))_  )\ _ )\  _((_)((_)  
- * |  \/  || | | || \| | |   \ (_)_\(_)| \| || __| 
- * | |\/| || |_| || .` | | |) | / _ \  | .` || _|  
- * |_|  |_| \___/ |_|\_| |___/ /_/ \_\ |_|\_||___| 
+/***
+ *       *
+ *     (  `                     (                                                              )
+ *     )\))(      (             )\ )      )             (      (       )       (            ( /(
+ *    ((_)()\    ))\    (      (()/(   ( /(    (       ))\     )\     /((     ))\    (      )\())  (
+ *    (_()((_)  /((_)   )\ )    ((_))  )(_))   )\ )   /((_)   ((_)   (_))\   /((_)   )\ )  (_))/   )\
+ *    |  \/  | (_))(   _(_/(    _| |  ((_)_   _(_/(  (_))     | __|  _)((_) (_))    _(_/(  | |_   ((_)
+ *    | |\/| | | || | | ' \)) / _` |  / _` | | ' \)) / -_)    | _|   \ V /  / -_)  | ' \)) |  _|  (_-<
+ *    |_|  |_|  \_,_| |_||_|  \__,_|  \__,_| |_||_|  \___|    |___|   \_/   \___|  |_||_|   \__|  /__/
  *
  *
  * ---------------
@@ -107,199 +21,249 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  *
  * ###############
  */
-var Mundane =
-/*#__PURE__*/
-function () {
-  function Mundane(context, beforeHandler, afterHandler, errorHandler, options) {
-    var _this = this;
-
-    _classCallCheck(this, Mundane);
-
-    _defineProperty(this, "beforeMev", void 0);
-
-    _defineProperty(this, "afterMev", void 0);
-
-    _defineProperty(this, "onMevError", void 0);
-
-    _defineProperty(this, "ctx", void 0);
-
-    _defineProperty(this, "mundaneLog", void 0);
-
-    _defineProperty(this, "creeps", void 0);
-
-    _defineProperty(this, "options", void 0);
-
-    this.ctx = context || window || {};
-
-    this.beforeMev = beforeHandler || function (mev) {
-      return null;
-    };
-
-    this.afterMev = afterHandler || function (mev) {
-      return null;
-    };
-
-    this.onMevError = errorHandler || function (mev) {
-      return null;
-    };
-
-    this.options = _objectSpread({
-      logging: {
-        disposeLogs: function disposeLogs() {
-          _this.mundaneLog = [];
-        },
-        keepLog: true,
-        log: function log(m) {
-          _this.mundaneLog.unshift({
-            m: m,
-            t: Date.now()
-          });
-        },
-        maxLogs: Infinity
-      }
-    }, options);
-    this.creeps = [];
-    this.mundaneLog = [];
-  }
-
-  _createClass(Mundane, [{
-    key: "sleep",
-    value: function sleep(ms) {
-      return new Promise(function (yes, no) {
-        setTimeout(yes, ms);
-      });
+/**
+ *
+ *
+ * @export
+ * @class Mundane
+ */
+export default class Mundane {
+    /**
+     *Creates an instance of Mundane.
+     * @param {*} context
+     * @param {(mev: any) => void} beforeHandler
+     * @param {(mev: any) => void} afterHandler
+     * @param {(mev: any) => void} errorHandler
+     * @param {object} options
+     * @memberof Mundane
+     */
+    constructor(context, beforeHandler, afterHandler, errorHandler, options) {
+        this.ctx = context || window || {};
+        // this.observedSequenceTrie = new Trie();
+        // this.observedSequenceCallbacks = {};
+        this.beforeMev = beforeHandler || ((mev) => null);
+        this.afterMev = afterHandler || ((mev) => null);
+        this.onMevError = errorHandler || ((mev) => null);
+        this.options = {
+            logging: {
+                disposeLogs: () => {
+                    this.mundaneLog = [];
+                },
+                keepLog: true,
+                log: (m) => {
+                    this.mundaneLog.unshift({
+                        m,
+                        t: Date.now()
+                    });
+                },
+                maxLogs: Infinity
+            },
+            ...options
+        };
+        this.creeps = [];
+        this.mundaneLog = [];
     }
-  }, {
-    key: "make",
-    value: function make(mevName, deets) {
-      return new CustomEvent(mevName, {
-        detail: deets
-      });
-    }
-  }, {
-    key: "hookAndPromise",
-    value: function hookAndPromise(context, func, before, after, eventPromiseGenerator) {
-      return function (mev) {
-        if (before) {
-          before.call(context, mev);
-        }
-
-        var doResponse = func(mev);
-
-        if (eventPromiseGenerator) {
-          return eventPromiseGenerator(mev).then(function (res) {
-            after.call(context, mev, doResponse, res);
-          });
-        } else {
-          return after.call(context, mev, doResponse);
-        }
-      };
-    }
-  }, {
-    key: "occur",
-    value: function occur(mev, before, after, eventPromise) {
-      var _this2 = this;
-
-      var hookedDispatch = this.hookAndPromise(this.ctx, function (mev) {
-        return _this2.ctx.dispatchEvent(mev);
-      }, before, after, eventPromise);
-      this.beforeMev(mev);
-
-      if (this.options.logging.keepLog) {
-        this.options.logging.log(mev);
-      }
-
-      var hookedResult = hookedDispatch(mev);
-
-      if (hookedResult instanceof Promise) {
-        return hookedResult.then(function () {
-          _this2.afterMev(mev);
+    /**
+     * resolve a promise after [ms] milliseconds
+     *
+     * @param {number} ms
+     * @returns
+     * @memberof Mundane
+     */
+    sleep(ms) {
+        return new Promise((yes, no) => {
+            setTimeout(yes, ms);
         });
-      } else {
-        this.afterMev(mev);
-        return hookedResult;
-      }
     }
-  }, {
-    key: "occurIn",
-    value: function occurIn(time, mev, before, after, eventPromise) {
-      var _this3 = this;
-
-      return this.sleep(time).then(function () {
-        return _this3.occur(mev, before, after, eventPromise);
-      });
+    /**
+     *
+     *
+     * @param {string} mevName
+     * @param {object} deets
+     * @returns CustomEvent(mevName, {detail: deets})
+     * @memberof Mundane
+     */
+    make(mevName, deets) {
+        return new CustomEvent(mevName, { detail: deets });
     }
-  }, {
-    key: "sequence",
-    value: function sequence(_sequence, onStep) {
-      var _this4 = this;
-
-      var sequencePromises = _sequence.map(function (step) {
-        return function () {
-          return _this4.sleep(step.afterMs).then(function (f) {
-            onStep(step);
-            step.func();
-          });
+    /**
+     * wrap [mev] in a before -> promise? -> after hook
+     *
+     * @param {*} context
+     * @param {(mev: any) => void} func
+     * @param {(mev: any) => void} [before]
+     * @param {(mev: any) => void} [after]
+     * @param {(mev: any) => Promise<any>} [eventPromiseGenerator]
+     * @returns
+     * @memberof Mundane
+     */
+    hookAndPromise(context, func, before, after, eventPromiseGenerator) {
+        return (mev) => {
+            if (before) {
+                before.call(context, mev);
+            }
+            const doResponse = func(mev);
+            if (eventPromiseGenerator) {
+                let eventPromise = eventPromiseGenerator(mev);
+                if (eventPromise.then) {
+                    return eventPromise.then((res) => {
+                        if (after) {
+                            after.call(context, mev, doResponse, res);
+                        }
+                    });
+                }
+                else {
+                    console.warn("event promise generator did not return a promise", eventPromise);
+                    return eventPromise;
+                }
+            }
+            else {
+                return after && after.call(context, mev, doResponse);
+            }
         };
-      });
-
-      var applyAsync = function applyAsync(acc, val) {
-        return acc.then(val);
-      };
-
-      var composeAsync = function composeAsync(funcs) {
-        return function () {
-          return funcs.reduce(applyAsync, Promise.resolve());
-        };
-      };
-
-      var sequenceGo = composeAsync(sequencePromises);
-      return sequenceGo();
     }
-  }, {
-    key: "observe",
-    value: function observe(mevName, react, before, after, eventPromiseGenerator, subject) {
-      var sub = subject || this.ctx;
-      var hookedReaction = this.hookAndPromise(sub, react, before, after, eventPromiseGenerator);
-      sub.addEventListener(mevName, hookedReaction), this.creeps.unshift({
-        hookedReaction: hookedReaction,
-        mevName: mevName,
-        subject: sub
-      });
-    }
-  }, {
-    key: "stop",
-    value: function stop() {
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = this.creeps[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var creep = _step.value;
-          creep.subject.removeEventListener(creep.mevName, creep.hookedReaction);
+    /**
+     * trigger the [mev] event with the before -> promise? -> after decorator
+     *
+     * @param {*} mev
+     * @param {(mev: any) => void} [before]
+     * @param {(mev: any) => void} [after]
+     * @param {Promise<any>} [eventPromise]
+     * @returns
+     * @memberof Mundane
+     */
+    occur(mev, before, after, eventPromise) {
+        const hookedDispatch = this.hookAndPromise(this.ctx, (m) => this.ctx.dispatchEvent(mev), before, after, (m) => eventPromise || Promise.resolve(mev));
+        this.beforeMev(mev);
+        if (this.options.logging.keepLog) {
+            this.options.logging.log(mev);
         }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return != null) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
+        const hookedResult = hookedDispatch(mev);
+        if (hookedResult instanceof Promise) {
+            return hookedResult.then(() => {
+                this.afterMev(mev);
+            });
         }
-      }
+        else {
+            this.afterMev(mev);
+            return hookedResult;
+        }
     }
-  }]);
-
-  return Mundane;
-}();
-
-
-
-/***/ }
-/******/ ]);
+    /**
+     * trigger [mev] event after [time] ms
+     *
+     * @param {number} time
+     * @param {*} mev
+     * @param {(mev: any) => void} [before]
+     * @param {(mev: any) => void} [after]
+     * @param {Promise<any>} [eventPromise]
+     * @returns
+     * @memberof Mundane
+     */
+    occurIn(time, mev, before, after, eventPromise) {
+        return this.sleep(time).then(() => {
+            return this.occur(mev, before, after, eventPromise);
+        });
+    }
+    /**
+     * execute each IMundaneSequenceStep in [sequence]
+     * a promise chainer with basic timing
+     *
+     * @param {IMundaneSequenceStep[]} sequence
+     * @param {(step: any) => void} [onStep]
+     * @returns
+     * @memberof Mundane
+     */
+    // async sequenceScheduleImmediate (sequence: IMundaneSequenceStep[], onStep?: (step: any) => void, loop?: boolean) {
+    //   for await (const s of this.schedule(sequence, onStep, loop)){
+    //   }
+    // }
+    async *schedule(sequence, loop) {
+        let stepIndex = 0;
+        let _lastStepStart = Date.now();
+        while (stepIndex <= sequence.length) {
+            let step = sequence[stepIndex];
+            let _stepStart = Date.now();
+            stepIndex += 1;
+            if (!step) {
+                return;
+            }
+            if (step.afterMs) {
+                await this.sleep(step.afterMs);
+            }
+            yield {
+                step: step,
+                result: step.func.call(this),
+                _stepStart: _stepStart
+            };
+            if (loop && stepIndex === sequence.length) {
+                stepIndex = 0;
+            }
+            _lastStepStart = _stepStart;
+        }
+    }
+    /**
+     * return a sequence handler you can call to get info or to stop. use generator!
+     * thats all, sequence -> generator.
+     * sheesh!
+     *
+     */
+    /**
+     * execute each IMundaneSequenceStep in [sequence]
+     * a promise chainer with basic timing
+     *
+     * @param {IMundaneSequenceStep[]} sequence
+     * @param {(step: any) => void} [onStep]
+     * @returns
+     * @memberof Mundane
+     */
+    async sequence(sequence, onStep, loop) {
+        let _seqStart = Date.now();
+        for await (const stepResult of this.schedule(sequence, loop)) {
+            console.log("sequence step", this, stepResult);
+            let _stepEnd = Date.now();
+            if (onStep) {
+                onStep.call(this, stepResult, _seqStart, _stepEnd);
+            }
+        }
+    }
+    /**
+     * listen for [mevName] event with a before -> promise? -> after decorator for the [react] function
+     *
+     * @param {string} mevName
+     * @param {(mev: any) => void} react
+     * @param {(mev: any) => void} [before]
+     * @param {(mev: any) => void} [after]
+     * @param {(mev: any) => Promise<any>} [eventPromiseGenerator]
+     * @param {*} [subject]
+     * @memberof Mundane
+     */
+    observe(mevName, react, before, after, eventPromiseGenerator, subject) {
+        const sub = subject || this.ctx;
+        const hookedReaction = this.hookAndPromise(sub, react, before, after, eventPromiseGenerator);
+        sub.addEventListener(mevName, hookedReaction),
+            this.creeps.unshift({
+                hookedReaction,
+                mevName,
+                subject: sub
+            });
+    }
+    // observeSequence (word: string, onTrieStep?: (tnode: any) => void, before?: (mev: any) => void, after?: (mev: any) => void) {
+    // }
+    // stopObservingSequence(word: string){
+    //   this.observedSequenceTrie.deleteWord(word);
+    //   delete this.observedSequenceCallbacks[word];
+    // }
+    /**
+     * remove all event listeners
+     * calling all creeps
+     *
+     * @memberof Mundane
+     */
+    stop() {
+        for (const creep of this.creeps) {
+            creep.subject.removeEventListener(creep.mevName, creep.hookedReaction);
+        }
+    }
+}
+//# sourceMappingURL=Mundane.js.map

@@ -26,6 +26,12 @@
 
 ## Getting it
 
+Um since i added the generator-based sequence I realised the whole idea of
+this is made unnecessary. Before and After become steps in a sequence.
+Every step is async, no need for feeling fancy with promises. If you 
+just handle execution in a resonable way initially it all works.
+
+
 Look at `test.html` to get the idea.
 
 If you clone it and open that it'll probably work and do some stuff and you'll see. 

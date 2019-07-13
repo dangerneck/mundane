@@ -7,7 +7,7 @@ let mundane = new Mundane(window,
 );
 let appends = 0;
 let lastAppend = Date.now();
-const appendToBox = (e) => {
+const appendToBox = (e, boxId = "default") => {
   let text;
   if (typeof e === 'object'){
     if (e instanceof CustomEvent){
@@ -20,6 +20,14 @@ const appendToBox = (e) => {
     text = e;
   }
   let r = document.getElementById("result-town");
+  
+  let containerBox = document.getElementById(boxId);
+  if (!containerBox){
+    containerBox = document.createElement("div");
+    containerBox.setAttribute('id',boxId);
+    r.appendChild(containerBox);
+  }
+  
   let p = document.createElement('p');
   let timeSpan = document.createElement('strong')
   let now = Date.now();
@@ -29,7 +37,7 @@ const appendToBox = (e) => {
   appends += 1;
   let textSpan = document.createElement('span');
   textSpan.textContent = text;
-  r.insertBefore(p,r.firstChild);
+  containerBox.insertBefore(p,containerBox.firstChild);
   // if (r.childElementCount > ){
   //   r.removeChild(r.lastChild);
   // }
@@ -69,6 +77,34 @@ let sequence = mundane.sequence([
   {afterMs: 500, func: () => appendToBox('sequence step 4')},
   {afterMs: 600, func: () => appendToBox('sequence step 5')},
   {afterMs: 300, func: () => appendToBox('sequence step 6')}
-], (step) => appendToBox("this step waited " + step.afterMs));
+], (stepResult , _seqStart, _stepEnd) => appendToBox(
+  `seqStart: ${_seqStart} ~ ` +
+  `seq delta: ${Date.now() - _seqStart} ~ ` +
+  `afterMs: ${stepResult.step.afterMs} ~ `
+  )
+);
 
 
+let sequenceTwo = mundane.sequence([
+  {afterMs: 5000, func: () => appendToBox('ANOTHER SEQUENCE ~~~')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 1')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 2')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 3')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 4')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 5')},
+  {afterMs: 250, func: () => appendToBox('ANOTHER sequence step 6')}
+], (stepResult , _seqStart, _stepEnd) => appendToBox(
+  `seqStart: ${_seqStart} ~ ` +
+  `seq delta: ${Date.now() - _seqStart} ~ ` +
+  `afterMs: ${stepResult.step.afterMs} ~ `
+  )
+);
+
+let tick = mundane.sequence([
+  {afterMs: 125,
+  func: () => {
+    appendToBox("tick", "tickbox");
+  }}
+], (sr, _seqStart, _stepEnd) => {
+  
+}, true);
